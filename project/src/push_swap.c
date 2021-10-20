@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:36:33 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 17:39:05 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:25:58 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,29 @@ static void	show_stack(t_lst *a, t_lst *b)
 {
 	t_lst	*a_lst;
 	t_lst	*b_lst;
+	char	*tmp;
 
 	a_lst = a;
 	b_lst = b;
-	printf("a: ");
+	write(1, "a: ", 4);
 	while (a_lst)
 	{
-		printf("%d ", a_lst->value);
+		tmp = ft_itoa(a_lst->value);
+		write(1, tmp, ft_strlen(tmp));
+		write(1, " ", 2);
+		free(tmp);
 		a_lst = a_lst->next;
 	}
-	printf("\nb: ");
+	write(1, "\nb: ", 5);
 	while (b_lst)
 	{
-		printf("%d ", b_lst->value);
+		tmp = ft_itoa(b_lst->value);
+		write(1, tmp, ft_strlen(tmp));
+		write(1, " ", 2);
+		free(tmp);
 		b_lst = b_lst->next;
 	}
-	printf("\n");
+	write(1, "\n", 2);
 }
 
 static void	add_split_nbr(t_lst **a, char *str)
@@ -74,6 +81,7 @@ int	main(int ac, char **av)
 	while (idx < ac)
 		add_split_nbr(&a, av[idx++]);
 	check_equal(a);
+	push_b(&a, &b);
 	show_stack(a, b);
 	//system("leaks push_swap");
 }
