@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:12:13 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 17:39:02 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:38:33 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ int		reverse_rotate_together(t_lst **a, t_lst **b);
 void	check_integer_range(long long nbr);
 void	check_equal(t_lst *lst);
 void	check_isdigit(char *str);
+/*this func in push_swap_util.c*/
+void	show_stack(t_lst *lst, char *lst_name);
+void	show_stack_together(t_lst *a, t_lst *b);
 
 #endif
