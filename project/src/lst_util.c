@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:46:05 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 12:51:14 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:41:18 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ int	ps_pop(t_lst **lst)
 	prev = curr->prev;
 	prev->next = 0;
 	ret = curr->value;
-	//ft_putnbr_fd(ret, 1);
-	//write(1, "\n", 2);
 	free(curr);
 	return (ret);
 }
@@ -94,8 +92,6 @@ int	ps_pop_left(t_lst **lst)
 	next = curr->next;
 	*lst = next;
 	ret = curr->value;
-	//ft_putnbr_fd(ret, 1);
-	//write(1, "\n", 2);
 	free(curr);
 	return (ret);
 }

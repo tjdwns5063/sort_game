@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:12:13 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 18:38:33 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:44:55 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	check_isdigit(char *str);
 /*this func in push_swap_util.c*/
 void	show_stack(t_lst *lst, char *lst_name);
 void	show_stack_together(t_lst *a, t_lst *b);
+/*this func in sort_func.c*/
+void	sort_lst(t_lst **a, t_lst **b);
 
 #endif

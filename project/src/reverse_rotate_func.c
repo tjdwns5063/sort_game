@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:56:17 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 14:15:31 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:42:08 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	reverse_rotate_b(t_lst **b)
 	return (1);
 }
 
-int reverse_rotate_together(t_lst **a, t_lst **b)
+int	reverse_rotate_together(t_lst **a, t_lst **b)
 {
 	reverse_rotate_func(a);
 	reverse_rotate_func(b);
