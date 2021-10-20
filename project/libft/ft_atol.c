@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongjki <seongjk@student.42seoul.kr>      +#+  +:+       +#+        */
+/*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 16:36:40 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 17:19:17 by seongjki         ###   ########.fr       */
+/*   Created: 2021/10/20 17:14:17 by seongjki          #+#    #+#             */
+/*   Updated: 2021/10/20 17:18:32 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	unsigned long	ret;
 	long			sign;

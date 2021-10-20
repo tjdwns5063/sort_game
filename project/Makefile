@@ -9,7 +9,8 @@ LIB = $(LIB_DIR)lib$(LIB_NAME).a
 
 SRC_DIR = ./src/
 SRC_NAME = lst_util.c push_swap.c push_func.c\
-		swap_func.c rotate_func.c reverse_rotate_func.c
+		swap_func.c rotate_func.c reverse_rotate_func.c\
+		check_err_func.c
 SRC = $(addprefix $(SRC_DIR),$(SRC_NAME))
 OBJ = $(SRC:.c=.o)
 

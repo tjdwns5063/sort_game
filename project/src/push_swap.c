@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:36:33 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 15:02:41 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:39:05 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,18 @@ static void	show_stack(t_lst *a, t_lst *b)
 
 static void	add_split_nbr(t_lst **a, char *str)
 {
-	char	**arr;
-	int		nbr;
-	char	**tmp;
+	char		**arr;
+	long long	nbr;
+	char		**tmp;
 
 	nbr = 0;
 	arr = ft_split(str, ' ');
 	tmp = arr;
 	while (*tmp)
 	{
-		nbr = ft_atoi(*tmp);
+		check_isdigit(*tmp);
+		nbr = ft_atol(*tmp);
+		check_integer_range(nbr);
 		ps_add_right(a, nbr);
 		free(*tmp);
 		tmp++;
@@ -71,8 +73,7 @@ int	main(int ac, char **av)
 	idx = 1;
 	while (idx < ac)
 		add_split_nbr(&a, av[idx++]);
-	rotate_a(&a);
-	push_b(&a, &b);
+	check_equal(a);
 	show_stack(a, b);
 	//system("leaks push_swap");
 }
