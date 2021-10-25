@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:40:03 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 18:42:22 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/25 17:37:54 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ int	swap_b(t_lst **b)
 	return (1);
 }
 
+
 int	swap_together(t_lst **a, t_lst **b)
 {
-	swap_a(a);
-	swap_b(b);
+	swap_func(a);
+	swap_func(b);
 	write(1, "ss\n", 4);
 	return (1);
 }

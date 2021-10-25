@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:46:05 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/20 18:41:18 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:25:58 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,17 @@ int	ps_pop_left(t_lst **lst)
 	int		ret;
 
 	curr = *lst;
+	if (!curr->next)
+	{
+		ret = curr->value;
+		free(curr);
+		*lst = 0;
+		return (ret);
+	}
 	next = curr->next;
-	*lst = next;
 	ret = curr->value;
+	next->prev = 0;
 	free(curr);
+	*lst = next;
 	return (ret);
 }
