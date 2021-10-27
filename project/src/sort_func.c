@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:46:25 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/26 20:24:02 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/27 21:11:35 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,97 +34,32 @@ int		is_sort(t_lst *lst, int cnt)
 	return (1);
 }
 
-int	find_min(t_lst *a)
+void	sort_small_stack(t_lst **a, t_lst **b)
 {
-	t_lst	*lst;
-	int		min;
+	int	cnt;
 
-	lst = a;
-	min = lst->value;
-	while (lst)
-	{
-		if (min > lst->value)
-			min = lst->value;
-		lst = lst->next;
-	}
-	return (min);
+	cnt = ps_lstsize(*a);
+	if (cnt == 2)
+		sort_two_item(a);
+	else if (cnt == 3)
+		sort_three_item(a);
+	else if (cnt == 4)
+		sort_four_item(a, b);
+	else if (cnt == 5)
+		sort_five_item(a, b);
 }
 
-int	get_head_cnt(t_lst *a)
+void	sort_lst(t_lst **a, t_lst **b)
 {
-	t_lst	*head;
-	int		cnt;
-	int		min;
+	int	cnt;
 
-	head = a;
-	min = find_min(a);
-	cnt = 0;
-	while (head)
+	cnt = ps_lstsize(*a);
+	while (is_sort(*a, cnt) != 1)
 	{
-		if (head->value == min)
-			break ;
-		cnt++;
-		head = head->next;
+		if (cnt <= 5)
+			sort_small_stack(a, b);
+		//else
+			//sort_big_stack(a, b);
 	}
-	return (cnt);
-}
-
-int	get_tail_cnt(t_lst *a)
-{
-	t_lst	*tail;
-	int		cnt;
-	int		min;
-
-	tail = a;
-	min = find_min(a);
-	cnt = 0;
-	while (tail->next)
-		tail = tail->next;
-	while (tail)
-	{
-		if (tail->value == min)
-			break ;
-		cnt++;
-		tail = tail->prev;
-	}
-	return (cnt + 1);
-}
-
-void	move_number(t_lst **a, t_lst **b)
-{
-	int		head_cnt;
-	int		tail_cnt;
-
-	if (!*a)
-		return ;
-	head_cnt = get_head_cnt(*a);
-	tail_cnt = get_tail_cnt(*a);
-	if (head_cnt <= tail_cnt)
-	{
-		while (head_cnt--)
-			rotate_a(a);
-		push_b(a, b);
-	}
-	else
-	{
-		while (tail_cnt--)
-			reverse_rotate_a(a);
-		push_b(a, b);
-	}
-}
-
-void	sort_lst(t_lst **a, t_lst **b, int cnt)
-{
-	int	iter;
-
-	iter = cnt;
-	if (is_sort(*a, cnt) != 1)
-	{
-		while (iter-- >= 0)
-			move_number(a, b);
-	}
-	iter = cnt;;
-	while (iter-- >= 0)
-		push_a(b, a);
-	//show_stack_together(*a, *b);
+	show_stack_together(*a, *b);
 }

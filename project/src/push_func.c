@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:45:34 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/21 18:29:43 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:18:31 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	push_a(t_lst **b, t_lst **a)
 {
 	if (!push_func(b, a))
 		return (0);
-	write(1, "pa\n", 4);
+	ft_putstr_fd("pa\n", 1);
 	return (1);
 }
 
@@ -39,6 +39,6 @@ int	push_b(t_lst **a, t_lst **b)
 {
 	if (!push_func(a, b))
 		return (0);
-	write(1, "pb\n", 4);
+	ft_putstr_fd("pb\n", 1);
 	return (1);
 }

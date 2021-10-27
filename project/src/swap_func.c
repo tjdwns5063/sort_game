@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:40:03 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/25 17:37:54 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:26:18 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	swap_a(t_lst **a)
 {
 	if (!swap_func(a))
 		return (0);
-	write(1, "sa\n", 4);
+	ft_putstr_fd("sa\n", 1);
 	return (1);
 }
 
@@ -38,7 +38,7 @@ int	swap_b(t_lst **b)
 {
 	if (!swap_func(b))
 		return (0);
-	write(1, "sb\n", 4);
+	ft_putstr_fd("sb\n", 1);
 	return (1);
 }
 
@@ -47,6 +47,6 @@ int	swap_together(t_lst **a, t_lst **b)
 {
 	swap_func(a);
 	swap_func(b);
-	write(1, "ss\n", 4);
+	ft_putstr_fd("ss\n", 1);
 	return (1);
 }

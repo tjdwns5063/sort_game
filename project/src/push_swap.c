@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:36:33 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/26 17:11:12 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/27 21:11:36 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,20 @@ static int	add_split_nbr(t_lst **a, char *str)
 {
 	char		**arr;
 	long long	nbr;
-	char		**tmp;
-	int			cnt;
+	int			idx;
 
 	nbr = 0;
 	arr = ft_split(str, ' ');
-	tmp = arr;
-	cnt = 0;
-	while (*tmp)
+	idx = 0;
+	while (arr[idx])
 	{
-		check_isdigit(*tmp);
-		nbr = ft_atol(*tmp);
-		check_integer_range(nbr);
+		nbr = ft_atol(arr[idx]);
 		ps_add_right(a, nbr);
-		cnt++;
-		free(*tmp);
-		tmp++;
+		free(arr[idx]);
+		idx++;
 	}
 	free(arr);
-	return (cnt);
+	return (0);
 }
 
 static void	init_lst(t_lst **a, t_lst **b)
@@ -48,16 +43,21 @@ int	main(int ac, char **av)
 	t_lst	*a;
 	t_lst	*b;
 	int		idx;
-	int		cnt;
 
 	if (ac < 2)
 		exit(0);
 	init_lst(&a, &b);
 	idx = 1;
-	cnt = 0;
 	while (idx < ac)
-		cnt += add_split_nbr(&a, av[idx++]);
-	check_equal(a);
-	sort_lst(&a, &b, cnt);
+	{
+		check_equal(av + 1);
+		check_isdigit(*(av + idx));
+		check_strlen(*(av + idx));
+		check_integer_range(ft_atol(*(av + idx)));
+		add_split_nbr(&a, av[idx]);
+		idx++;
+	}
+	//sort_lst(&a, &b, cnt);
+	show_stack_together(a, b);
 	//system("leaks push_swap | grep 'leaked'");
 }
