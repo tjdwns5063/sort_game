@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:56:17 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 16:25:29 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 13:24:46 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 static int	reverse_rotate_func(t_lst **lst)
 {
 	t_lst	*ptr;
-	int		tmp;
+	int		tmp_value;
+	int		tmp_idx;
+	char	*tmp_binary;
 
 	ptr = *lst;
 	if (!ptr)
@@ -24,9 +26,15 @@ static int	reverse_rotate_func(t_lst **lst)
 		ptr = ptr->next;
 	while (ptr->prev)
 	{
-		tmp = ptr->value;
+		tmp_value = ptr->value;
+		tmp_idx = ptr->idx;
+		tmp_binary = ptr->binary;
 		ptr->value = ptr->prev->value;
-		ptr->prev->value = tmp;
+		ptr->idx = ptr->prev->idx;
+		ptr->binary = ptr->prev->binary;
+		ptr->prev->value = tmp_value;
+		ptr->prev->idx = tmp_idx;
+		ptr->prev->binary = tmp_binary;
 		ptr = ptr->prev;
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:36:33 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 21:11:36 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:56:43 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int ac, char **av)
 		add_split_nbr(&a, av[idx]);
 		idx++;
 	}
-	//sort_lst(&a, &b, cnt);
-	show_stack_together(a, b);
-	//system("leaks push_swap | grep 'leaked'");
+	set_idx(a);
+	set_binary(a);
+	sort_lst(&a, &b);
 }

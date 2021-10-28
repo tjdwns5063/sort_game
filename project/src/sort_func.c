@@ -6,13 +6,13 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:46:25 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 21:11:35 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:58:49 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_sort(t_lst *lst, int cnt)
+int	is_sort(t_lst *lst, int cnt)
 {
 	t_lst	*curr;
 	t_lst	*next;
@@ -58,8 +58,8 @@ void	sort_lst(t_lst **a, t_lst **b)
 	{
 		if (cnt <= 5)
 			sort_small_stack(a, b);
-		//else
-			//sort_big_stack(a, b);
+		else
+			sort_big_stack(a, b);
 	}
-	show_stack_together(*a, *b);
+	show_together(*a, *b);
 }

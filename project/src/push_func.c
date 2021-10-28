@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:45:34 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 16:18:31 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:53:56 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@ static int	push_func(t_lst **from, t_lst **to)
 	t_lst	*from_lst;
 	t_lst	*to_lst;
 	int		top;
+	int		idx;
+	char	*binary;
 
 	if (!*from)
 		return (0);
 	from_lst = *from;
 	to_lst = *to;
+	idx = from_lst->idx;
+	binary = from_lst->binary;
 	top = ps_pop_left(from);
 	ps_add_left(to, top);
+	(*to)->binary = binary;
+	(*to)->idx = idx;
 	return (1);
 }
 

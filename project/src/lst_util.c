@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:46:05 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 14:25:10 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 11:45:39 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static t_lst	*ps_lstnew(int value)
 	if (!ptr)
 		return (0);
 	ptr->value = value;
+	ptr->idx = 0;
+	ptr->binary = 0;
 	ptr->next = 0;
 	ptr->prev = 0;
 	return (ptr);

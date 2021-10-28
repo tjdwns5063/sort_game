@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:40:03 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 16:26:18 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:58:31 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,22 @@
 static int	swap_func(t_lst **lst)
 {
 	t_lst	*ptr;
-	int		tmp;
+	int		tmp_value;
+	int		tmp_idx;
+	char	*tmp_binary;
 
 	ptr = *lst;
 	if (!ptr || !ptr->next)
 		return (0);
-	tmp = ptr->value;
+	tmp_value = ptr->value;
+	tmp_idx = ptr->idx;
+	tmp_binary = ptr->binary;
 	ptr->value = ptr->next->value;
-	ptr->next->value = tmp;
+	ptr->idx = ptr->next->idx;
+	ptr->binary = ptr->next->binary;
+	ptr->next->value = tmp_value;
+	ptr->next->idx = tmp_idx;
+	ptr->next->binary = tmp_binary;
 	return (1);
 }
 
@@ -41,7 +49,6 @@ int	swap_b(t_lst **b)
 	ft_putstr_fd("sb\n", 1);
 	return (1);
 }
-
 
 int	swap_together(t_lst **a, t_lst **b)
 {

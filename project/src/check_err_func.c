@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:20:52 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 21:11:33 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:52:47 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	occur_error(void)
 {
-	write(2, "Error\n", 6);
+	ft_putstr_fd("Error\n", 2);
 	exit(0);
 }
 
