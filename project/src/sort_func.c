@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:46:25 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/30 13:59:26 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:38:56 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,6 @@ void	sort_lst(t_lst **a, t_lst **b)
 		else
 			sort_big_stack(a, b);
 	}
+	ps_lstclear(a);
+	ps_lstclear(b);
 }

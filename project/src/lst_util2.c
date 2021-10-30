@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 18:47:40 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/27 20:21:38 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:36:43 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,20 @@ int	get_tail_cnt(t_lst *lst)
 		tail = tail->prev;
 	}
 	return (cnt + 1);
+}
+
+void	ps_lstclear(t_lst **lst)
+{
+	t_lst	*curr;
+	t_lst	*next;
+
+	if (!*lst)
+		return ;
+	curr = *lst;
+	while (curr)
+	{
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
 }

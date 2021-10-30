@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:36:33 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/30 13:57:50 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:38:54 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static int	add_split_nbr(t_lst **a, char *str)
 	idx = 0;
 	while (arr[idx])
 	{
-		check_isdigit(arr[idx]);
+		check_isdigit(arr[idx], a);
 		nbr = ft_atol(arr[idx]);
-		check_integer_range(nbr);
+		check_integer_range(nbr, a);
 		ps_add_right(a, nbr);
 		free(arr[idx]);
 		idx++;
 	}
-	check_equal(*a);
+	check_equal(a);
 	free(arr);
 	return (0);
 }

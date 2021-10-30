@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:12:13 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/30 14:04:12 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:35:47 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int		ps_pop_left(t_lst **lst);
 /* this func in lst_util2.c*/
 int		ps_lstsize(t_lst *lst);
 int		find_min(t_lst *lst);
-int		find_max(t_lst *lst);
 int		get_head_cnt(t_lst *lst);
 int		get_tail_cnt(t_lst *lst);
+void	ps_lstclear(t_lst **lst);
 /* this func in swap_func.c*/
 int		swap_a(t_lst **a);
 int		swap_b(t_lst **b);
@@ -52,9 +52,9 @@ int		reverse_rotate_a(t_lst **a);
 int		reverse_rotate_b(t_lst **b);
 int		reverse_rotate_together(t_lst **a, t_lst **b);
 /*this func in check_err_func.c*/
-void	check_integer_range(long long nbr);
-void	check_equal(t_lst *a);
-void	check_isdigit(char *str);
+void	check_integer_range(long long nbr, t_lst **a);
+void	check_equal(t_lst **a);
+void	check_isdigit(char *str, t_lst **a);
 /*this func in push_swap_util.c*/
 void	show_stack(t_lst *lst, char *lst_name);
 void	show_together(t_lst *a, t_lst *b);
