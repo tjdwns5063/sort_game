@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 18:47:40 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/30 14:36:43 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 15:11:35 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	ps_lstclear(t_lst **lst)
 	while (curr)
 	{
 		next = curr->next;
+		free(curr->binary);
 		free(curr);
 		curr = next;
 	}
