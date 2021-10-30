@@ -6,13 +6,13 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:46:25 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/28 15:58:49 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:59:26 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sort(t_lst *lst, int cnt)
+static int	is_sort(t_lst *lst, int cnt)
 {
 	t_lst	*curr;
 	t_lst	*next;
@@ -34,7 +34,26 @@ int	is_sort(t_lst *lst, int cnt)
 	return (1);
 }
 
-void	sort_small_stack(t_lst **a, t_lst **b)
+static void	sort_big_stack(t_lst **a, t_lst **b)
+{
+	int				size;
+	char			*max_bits;
+	int				max_bits_len;
+	unsigned int	cnt;
+
+	max_bits = ft_convert_base(ps_lstsize(*a) - 1, "01");
+	max_bits_len = ft_strlen(max_bits);
+	cnt = 1;
+	while (max_bits_len--)
+	{
+		size = ps_lstsize(*a);
+		check_top_and_move_iter(size, cnt, a, b);
+		cnt++;
+	}
+	free(max_bits);
+}
+
+static void	sort_small_stack(t_lst **a, t_lst **b)
 {
 	int	cnt;
 
@@ -61,5 +80,4 @@ void	sort_lst(t_lst **a, t_lst **b)
 		else
 			sort_big_stack(a, b);
 	}
-	show_together(*a, *b);
 }

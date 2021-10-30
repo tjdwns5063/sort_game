@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:20:52 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/28 14:52:47 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 13:55:58 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,34 @@ void	check_integer_range(long long nbr)
 		occur_error();
 }
 
-void	check_equal(char **arr)
+void	check_equal(t_lst *a)
 {
-	int	left;
-	int	right;
+	t_lst	*curr;
+	t_lst	*next;
 
-	left = 0;
-	while (*(arr + left))
+	curr = a;
+	while (curr)
 	{
-		right = left + 1;
-		while (*(arr + right))
+		next = curr->next;
+		while (next)
 		{
-			if (ft_strcmp(*(arr + left), *(arr + right)) == 0)
+			if (curr->value == next->value)
 				occur_error();
-			right++;
+			next = next->next;
 		}
-		left++;
+		curr = curr->next;
 	}
-}
-
-void	check_strlen(char *str)
-{
-	if (ft_strlen(str) > 11)
-		occur_error();
 }
 
 void	check_isdigit(char *str)
 {
 	int	idx;
 
+	idx = 0;
 	if (ft_strncmp("-", str, 2) == 0)
 		occur_error();
-	idx = 1;
+	if (str[idx] == '-')
+		idx++;
 	while (str[idx])
 	{
 		if (!ft_isdigit(str[idx++]))

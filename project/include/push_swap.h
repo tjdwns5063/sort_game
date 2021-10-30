@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:12:13 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/28 15:50:48 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:04:12 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 # include "libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
 
 typedef struct s_lst
 {
@@ -56,9 +53,8 @@ int		reverse_rotate_b(t_lst **b);
 int		reverse_rotate_together(t_lst **a, t_lst **b);
 /*this func in check_err_func.c*/
 void	check_integer_range(long long nbr);
-void	check_equal(char **arr);
+void	check_equal(t_lst *a);
 void	check_isdigit(char *str);
-void	check_strlen(char *str);
 /*this func in push_swap_util.c*/
 void	show_stack(t_lst *lst, char *lst_name);
 void	show_together(t_lst *a, t_lst *b);
@@ -74,6 +70,7 @@ void	sort_five_item(t_lst **a, t_lst **b);
 /*this func in sort_big_stack_util.c*/
 void	set_idx(t_lst *lst);
 void	set_binary(t_lst *lst);
-void	sort_big_stack(t_lst **a, t_lst **b);
+void	check_top_and_move_iter(int size, unsigned int cnt, \
+								t_lst **a, t_lst **b);
 
 #endif
