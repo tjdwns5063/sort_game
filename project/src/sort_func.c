@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:46:25 by seongjki          #+#    #+#             */
-/*   Updated: 2021/10/30 16:38:56 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/11/02 15:30:09 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static void	sort_big_stack(t_lst **a, t_lst **b)
 	{
 		size = ps_lstsize(*a);
 		check_top_and_move_iter(size, cnt, a, b);
+		show_together(*a, *b);
 		cnt++;
 	}
 	free(max_bits);

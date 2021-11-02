@@ -6,7 +6,7 @@
 #    By: seongjki <seongjk@student.42seoul.k>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 12:59:25 by seongjki          #+#    #+#              #
-#    Updated: 2021/10/30 12:59:26 by seongjki         ###   ########.fr        #
+#    Updated: 2021/11/02 12:56:41 by seongjki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC_DIR = ./src/
 SRC_NAME = lst_util.c push_swap.c push_func.c\
 		swap_func.c rotate_func.c reverse_rotate_func.c\
 		check_err_func.c push_swap_util.c sort_func.c\
-		sort_small_stack_util.c sort_big_stack_util.c lst_util2.c
+		sort_small_stack_util.c sort_big_stack_util.c\
+		lst_util2.c
+
 SRC = $(addprefix $(SRC_DIR),$(SRC_NAME))
 OBJ = $(SRC:.c=.o)
 
